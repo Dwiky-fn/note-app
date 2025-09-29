@@ -1,4 +1,4 @@
-/* Reset dasar */
+/* ================= RESET DASAR ================= */
 * {
   padding: 0;
   margin: 0;
@@ -16,7 +16,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;               /* full sampai tepi */
+  padding: 20px;
   border-bottom: 1px solid #555;
   margin-bottom: 30px;
 }
@@ -24,6 +24,62 @@ body {
 .note-header h1 {
   font-size: 2rem;
   font-weight: bold;
+  margin: 0;
+}
+
+.note-header h1 a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.note-header h1 a:hover {
+  color: #fbc02d;
+  transform: scale(1.03);
+}
+
+/* ================= NAVIGATION ================= */
+.navigation svg {
+  font-size: 28px;
+}
+
+.navigation ul {
+  list-style: none;
+  display: flex;
+  gap: 16px;
+}
+
+.navigation li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  border-radius: 8px;
+  color: white;
+}
+
+.navigation a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+.navigation a:hover {
+  background-color: #333;
+}
+
+/* ================= WRAPPER KONTEN ================= */
+.note-app__content {
+  max-width: 1200px;       
+  margin: 0 auto;          
+  padding: 0 24px 40px;    
+}
+
+/* ================= SEARCH ================= */
+.note-search {
+  margin-bottom: 20px;
 }
 
 .note-search input {
@@ -32,20 +88,12 @@ body {
   border-radius: 4px;
   background-color: transparent;
   color: white;
+  margin-top: 12px;
 }
 
 .note-search input::placeholder {
   color: #bbb;
 }
-
-/* ================= WRAPPER KONTEN ================= */
-.note-app__content {
-  max-width: 1200px;       /* biar gak terlalu melebar */
-  margin: 0 auto;          /* center */
-  padding: 0 24px 40px;    /* jarak kiri-kanan + bawah */
-}
-
-
 
 /* ================= FORM INPUT ================= */
 .note-input {
@@ -81,6 +129,7 @@ body {
   border-radius: 4px;
   color: white;
   cursor: pointer;
+  transition: 0.2s;
 }
 
 .note-input button:hover {
@@ -98,9 +147,10 @@ body {
 .notes-list__empty-message {
   color: #bbb;
   font-style: italic;
+  text-align: center;
+  margin-top: 20px;
 }
 
-/* Jarak antar section daftar catatan dengan arsip */
 h2 + .note-list {
   margin-bottom: 40px;
 }
@@ -112,8 +162,7 @@ h2 + .note-list {
   padding: 16px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-height: 260px; /* tinggi konsisten */
+  min-height: 260px;
 }
 
 .note-card__title {
@@ -134,17 +183,24 @@ h2 + .note-list {
   margin-bottom: 12px;
 }
 
-/* ================= BUTTONS ================= */
+/* ================= ACTION BUTTONS ================= */
+.note-card__actions {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
 .note-card__delete,
 .note-card__archive {
+  flex: 1;
   padding: 8px;
   border: 1px solid;
   border-radius: 4px;
-  background-color: #202124; /* sama dengan background body */
+  background-color: #202124;
   cursor: pointer;
-  margin-right: 6px;
-  min-width: 100px;
   font-weight: bold;
+  text-align: center;
+  transition: 0.2s;
 }
 
 .note-card__delete {
@@ -165,8 +221,32 @@ h2 + .note-list {
   background-color: #3b3500;
 }
 
-/* Supaya Delete & Arsipkan sejajar */
-.note-card > .note-card__delete,
-.note-card > .note-card__archive {
-  display: inline-block;
+/* ================= NOT FOUND PAGE ================= */
+.not-found-page {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.not-found-page h2 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.not-found-page p {
+  margin-bottom: 20px;
+  color: #bbb;
+}
+
+.not-found-page button {
+  padding: 10px 20px;
+  border: 1px solid white;
+  border-radius: 4px;
+  background-color: #000;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.not-found-page button:hover {
+  background-color: #333;
 }

@@ -1,18 +1,23 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-class SearchBar extends React.Component {
-  render() {
-    return (
-      <div className="note-search">
-        <input
-          type="text"
-          placeholder="Cari judul catatan..."
-          value={this.props.value}
-          onChange={this.props.onSearch}
-        />
-      </div>
-    );
-  }
+function SearchBar({ keyword, keywordChange }) {
+  return (
+    <div className="note-search">
+      <input
+        className="search-bar"
+        type="text"
+        placeholder="Cari judul catatan..."
+        value={keyword}
+        onChange={(event) => keywordChange(event.target.value)}
+      />
+    </div>
+  )
+}
+
+SearchBar.propTypes = {
+  keyword: PropTypes.string.isRequired,
+  keywordChange: PropTypes.func.isRequired,
 }
 
 export default SearchBar;
