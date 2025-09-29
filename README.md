@@ -1,70 +1,127 @@
-# Getting Started with Create React App
+# Aplikasi Catatan Pribadi
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Aplikasi Catatan sederhana berbasis **React.js** yang memungkinkan pengguna untuk menambah, menghapus, mengarsipkan, dan mencari catatan. Aplikasi ini dirancang dengan tampilan modern, responsif, dan mudah digunakan.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📝 Fitur Utama
 
-### `npm start`
+1. **Daftar Catatan**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+   * Menampilkan semua catatan yang belum diarsipkan.
+   * Tampilan kartu catatan dengan judul, tanggal dibuat, dan isi catatan.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. **Tambah Catatan**
 
-### `npm test`
+   * Menambahkan catatan baru dengan judul dan isi.
+   * Judul terbatas 50 karakter, otomatis memberi judul "Untitled" jika kosong.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. **Hapus Catatan**
 
-### `npm run build`
+   * Menghapus catatan dengan konfirmasi menggunakan **SweetAlert2**.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. **Arsip Catatan**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   * Mengarsipkan atau memindahkan catatan dari daftar utama ke halaman arsip.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+5. **Pencarian Catatan**
 
-### `npm run eject`
+   * Mencari catatan berdasarkan judul menggunakan search bar.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+6. **Navigasi Halaman**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   * Navigasi menggunakan **React Router**: Home, Add, Archive, Detail, dan NotFound.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+7. **Detail Catatan**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   * Menampilkan halaman detail catatan lengkap dengan isi catatan.
 
-## Learn More
+8. **Responsive Layout & Styling Modern**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   * Grid responsif untuk daftar catatan.
+   * Dark mode, hover effect, dan tombol yang intuitif.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## 💻 Teknologi yang Digunakan
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* React.js (Functional & Class Component)
+* React Router DOM
+* React Icons
+* SweetAlert2
+* CSS custom (tanpa framework)
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📁 Struktur Project
 
-### Making a Progressive Web App
+```
+src/
+├─ components/
+│  ├─ NoteApp.jsx
+│  ├─ Navigation.jsx
+│  ├─ NoteCard.jsx
+│  ├─ NoteList.jsx
+│  ├─ NoteInput.jsx
+│  ├─ DeleteButton.jsx
+│  ├─ ArchiveButton.jsx
+│  └─ SearchBar.jsx
+├─ pages/
+│  ├─ HomePage.jsx
+│  ├─ AddPage.jsx
+│  ├─ ArchivePage.jsx
+│  ├─ DetailPage.jsx
+│  └─ NotFoundPage.jsx
+├─ utils/
+│  └─ local-data.js
+├─ styles/
+│  └─ style.css
+└─ index.js
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## ⚙️ Cara Install dan Jalankan
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+1. **Clone repository**
 
-### Deployment
+```bash
+git clone <repository-url>
+cd <folder-project>
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+2. **Install dependencies**
 
-### `npm run build` fails to minify
+```bash
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+3. **Jalankan aplikasi**
+
+```bash
+npm start
+```
+
+---
+
+## 💡 Saran Pengembangan ke Depan
+
+* Tambahkan **Edit Catatan** agar pengguna dapat mengubah judul dan isi.
+* Tambahkan **kategori/tag** untuk mempermudah filter catatan.
+* Tambahkan **pin/sticky note** untuk catatan penting agar selalu muncul di atas.
+* Tambahkan **light/dark mode toggle**.
+* Tambahkan penyimpanan permanen dengan **localStorage** atau **backend database**.
+
+---
+
+## 🔗 Catatan
+
+* Semua data catatan saat ini disimpan di **memory / local variable**, jadi akan hilang saat reload browser (opsional: bisa diubah ke localStorage).
+* Fitur delete menggunakan konfirmasi agar tidak sengaja terhapus.
+
+---
+
+## 👤 Pembuat
+
+**Nama:** Dwiky Juniardi
+**Instansi:** Politeknik Negeri Pontianak
