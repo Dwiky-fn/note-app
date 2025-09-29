@@ -1,0 +1,172 @@
+/* Reset dasar */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #202124;
+  color: white;
+}
+
+/* ================= HEADER ================= */
+.note-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;               /* full sampai tepi */
+  border-bottom: 1px solid #555;
+  margin-bottom: 30px;
+}
+
+.note-header h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.note-search input {
+  padding: 8px 12px;
+  border: 1px solid #555;
+  border-radius: 4px;
+  background-color: transparent;
+  color: white;
+}
+
+.note-search input::placeholder {
+  color: #bbb;
+}
+
+/* ================= WRAPPER KONTEN ================= */
+.note-app__content {
+  max-width: 1200px;       /* biar gak terlalu melebar */
+  margin: 0 auto;          /* center */
+  padding: 0 24px 40px;    /* jarak kiri-kanan + bawah */
+}
+
+
+
+/* ================= FORM INPUT ================= */
+.note-input {
+  margin: 20px auto 40px auto;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.note-input__title__char-limit {
+  text-align: right;
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+.note-input input {
+  padding: 12px;
+  border: 1px solid #555;
+  border-radius: 4px;
+  background-color: transparent;
+  color: white;
+}
+
+.note-input input::placeholder {
+  color: #bbb;
+}
+
+.note-input button {
+  padding: 10px;
+  background-color: #000;
+  border: 1px solid white;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.note-input button:hover {
+  background-color: #333;
+}
+
+/* ================= LIST CATATAN ================= */
+.note-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.notes-list__empty-message {
+  color: #bbb;
+  font-style: italic;
+}
+
+/* Jarak antar section daftar catatan dengan arsip */
+h2 + .note-list {
+  margin-bottom: 40px;
+}
+
+/* ================= NOTE CARD ================= */
+.note-card {
+  border: 1px solid #555;
+  border-radius: 6px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 260px; /* tinggi konsisten */
+}
+
+.note-card__title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.note-card__createdAt {
+  font-size: 0.8rem;
+  color: #bbb;
+  margin-bottom: 8px;
+}
+
+.note-card__body {
+  flex-grow: 1;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+/* ================= BUTTONS ================= */
+.note-card__delete,
+.note-card__archive {
+  padding: 8px;
+  border: 1px solid;
+  border-radius: 4px;
+  background-color: #202124; /* sama dengan background body */
+  cursor: pointer;
+  margin-right: 6px;
+  min-width: 100px;
+  font-weight: bold;
+}
+
+.note-card__delete {
+  color: #d32f2f;
+  border-color: #d32f2f;
+}
+
+.note-card__delete:hover {
+  background-color: #301414;
+}
+
+.note-card__archive {
+  color: #fbc02d;
+  border-color: #fbc02d;
+}
+
+.note-card__archive:hover {
+  background-color: #3b3500;
+}
+
+/* Supaya Delete & Arsipkan sejajar */
+.note-card > .note-card__delete,
+.note-card > .note-card__archive {
+  display: inline-block;
+}
